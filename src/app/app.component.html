@@ -1,5 +1,27 @@
-<heading size="h1">
- Tuaan oi  
-</heading>
+<heading size="h1" content="content"> </heading>
 
-<app-chart></app-chart>
+<!-- <card
+  cardName="Total User"
+  cardNumber="20"
+  cardIconUrl="../assets/icons/user-icon.png"
+  trendingIconUrl="../assets/icons/ic-trending-up.png"
+  trendingValue="80%"
+  shortDescription="Up from yesterday"
+>
+</card> -->
+
+<div class="card-wrapper">
+  <div *ngFor="let card of cardList">
+    <card
+      cardName={{card.title}}
+      cardNumber={{card.number}}
+      cardIconUrl={{card.iconUrl}}
+      trendingIconUrl={{card.trendingIconUrl}}
+      trendingValue={{card.trendingValue}}
+      shortDescription={{card.description}}
+    >
+    </card>
+  </div>
+</div>
+
+<!-- <app-chart></app-chart> -->

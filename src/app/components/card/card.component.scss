@@ -1,0 +1,21 @@
+
+.card {
+  border: 1px solid grey;
+  border-radius: 16px;
+  padding: 16px;
+  max-width: 300px;
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card-desc {
+    display: flex;
+    align-items: center;
+    span {
+      margin-right: 4px;
+    }
+    .trending-value {
+      color:#00b69b;
+    }
+  }
+}
