@@ -1,5 +1,12 @@
 <heading size="h1" content="content"> </heading>
 
+<app-table
+  [data]="dataTable"
+  [columnName]="dataColName"
+  (onEdit)="handelUpdateItem($event)"
+  (onDelete)="handleDeleteItem($event)"
+></app-table>
+
 <!-- <card
   cardName="Total User"
   cardNumber="20"
@@ -13,12 +20,12 @@
 <div class="card-wrapper">
   <div *ngFor="let card of cardList">
     <card
-      cardName={{card.title}}
-      cardNumber={{card.number}}
-      cardIconUrl={{card.iconUrl}}
-      trendingIconUrl={{card.trendingIconUrl}}
-      trendingValue={{card.trendingValue}}
-      shortDescription={{card.description}}
+      cardName="{{ card.title }}"
+      cardNumber="{{ card.number }}"
+      cardIconUrl="{{ card.iconUrl }}"
+      trendingIconUrl="{{ card.trendingIconUrl }}"
+      trendingValue="{{ card.trendingValue }}"
+      shortDescription="{{ card.description }}"
     >
     </card>
   </div>
