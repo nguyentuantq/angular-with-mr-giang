@@ -1,0 +1,14 @@
+table, th, td  {
+  border: 1px solid gray;
+ 
+}
+
+.table-wrapper {
+  margin: 24px 0;
+  border-collapse: collapse;
+
+  td, th {
+    padding: 8px;
+    
+  }
+}

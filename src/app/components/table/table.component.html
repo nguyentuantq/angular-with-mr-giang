@@ -1,0 +1,51 @@
+<div class="search-wrapper">
+  <input
+    type="text"
+    [(ngModel)]="searchBox"
+    (ngModelChange)="onSearchChange($event)"
+    placeholder="search"
+  />
+</div>
+
+<table class="table-wrapper">
+  <thead class="table-header">
+    <tr class="table-header-row">
+      <th>#</th>
+      <th *ngFor="let name of columnName">
+        {{ name }} <button>up</button> <button>down</button>
+      </th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody class="table-body">
+    <tr
+      class="table-body-row"
+      *ngFor="let row of filteredData; let num = index"
+    >
+      <td>{{ num + 1 }}</td>
+      <td>
+        <img src="{{ row.iconUrl }}" />
+        <span>{{ row.productName }}</span>
+      </td>
+      <td>
+        <span>{{ row.location }}</span>
+      </td>
+      <td>
+        <span>{{ row.dateTime }}</span>
+      </td>
+      <td>
+        <span>{{ row.piece }}</span>
+      </td>
+      <td>
+        <span>{{ row.amount }} </span>
+      </td>
+      <td>
+        <span>{{ row.status }}</span>
+      </td>
+      <td>
+        <button (click)="updateItem(row)">Cập nhật</button>
+        <button (click)="deleteItem(row)">Xóa</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
