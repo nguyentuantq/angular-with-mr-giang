@@ -1,0 +1,85 @@
+<div class="bnh-paginator-wrapper">
+  <div *ngIf="showCurrentItemsInfo" class="paginator-info">
+    <span class="page-label">表示件数:</span>
+    <span class="current-page">{{ paginator.pageIndex * pageSize + 1 }}</span>
+    <span class="slash">~</span>
+    <span class="total-page">{{
+      paginator.pageIndex + 1 == pageTotal
+        ? length
+        : (paginator.pageIndex + 1) * pageSize
+    }}</span>
+    <span class="slash">件/全</span>
+    <span class="total-page">{{ length }}</span>
+    <span class="slash">件</span>
+  </div>
+  <div class="page-select-wrapper">
+    <p>ページ</p>
+
+    <div class="page-selector">
+      <mat-select
+        [panelWidth]="80"
+        [(ngModel)]="pageIndex"
+        (selectionChange)="onSelectEvent($event.value)"
+      >
+        <mat-option
+          *ngFor="let option of pageIndexOptions"
+          [value]="option.value"
+        >
+          {{ option.viewValue }}
+        </mat-option>
+      </mat-select>
+    </div>
+  </div>
+
+  <div class="page-buttons-wrapper">
+    <button
+      mat-icon-button
+      *ngIf="!hideFirstLastButtons"
+      [disabled]="paginator.pageIndex <= 0"
+      (click)="paginator.firstPage()"
+    >
+      <mat-icon>first_page</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      [disabled]="paginator.pageIndex <= 0"
+      (click)="paginator.previousPage()"
+    >
+      <mat-icon>navigate_before</mat-icon>
+    </button>
+    <div class="page-info">
+      <span class="page-label">ページ</span>
+      <span class="current-page">{{ paginator.pageIndex + 1 }}</span>
+      <span class="slash">/</span>
+      <span class="total-page">{{ pageTotal }}</span>
+    </div>
+    <button
+      mat-icon-button
+      [disabled]="paginator.pageIndex >= pageTotal - 1"
+      (click)="paginator.nextPage()"
+    >
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+
+    <button
+      mat-icon-button
+      *ngIf="!hideFirstLastButtons"
+      [disabled]="paginator.pageIndex >= pageTotal - 1"
+      (click)="paginator.lastPage()"
+    >
+      <mat-icon>last_page</mat-icon>
+    </button>
+  </div>
+</div>
+
+<mat-paginator
+  #paginator
+  style="display: none"
+  class="demo-paginator"
+  (page)="handlePageEvent($event)"
+  [length]="this.length"
+  [pageSize]="this.pageSize"
+  [pageIndex]="pageIndex"
+  aria-label="Select page"
+>
+</mat-paginator>

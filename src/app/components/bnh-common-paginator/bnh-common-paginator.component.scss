@@ -1,0 +1,41 @@
+.bnh-paginator-wrapper {
+  background-color: #fff;
+  width: 100%;
+  padding: 27px 16px;
+  display: flex;
+  justify-content: start;
+  .paginator-info {
+    line-height: 36px;
+    margin-right: 20px;
+  }
+  .page-info {
+    margin: 0 10px;
+    .page-label {
+      margin-right: 8px;
+    }
+    span {
+      line-height: 36px;
+    }
+  }
+  .page-select-wrapper, 
+  .page-buttons-wrapper {
+    display: flex;
+    justify-content: start;
+    margin-right: 20px;
+  }
+
+  .page-select-wrapper {
+    p {
+      line-height: 36px;
+      margin-right: 8px;
+    }
+    .page-selector {
+      width: 80px;
+      border: 1px solid grey;
+      border-radius: 8px;
+      padding: 8px;
+    }
+  }
+}
+
+  

@@ -1,4 +1,5 @@
 <div class="search-wrapper">
+  <span>Search</span>
   <input
     type="text"
     [(ngModel)]="searchKeyword"
@@ -7,8 +8,35 @@
 </div>
 
 <!-- <form action=""> -->
-<label for="name"></label>
-<input type="text" name="" id="name" [(ngModel)]="productName" />
+<div>
+  <label for="iconUrl">Icon URL</label>
+  <input type="text" name="icon url" id="iconUrl" [(ngModel)]="iconUrl" />
+</div>
+<div>
+  <label for="name">Product Name</label>
+  <input type="text" name="product name" id="name" [(ngModel)]="productName" />
+</div>
+<div>
+  <label for="location">Location</label>
+  <input type="text" name="location" id="location" [(ngModel)]="location" />
+</div>
+<div>
+  <label for="v">Datetime</label>
+  <input type="text" name="dateTime" id="dateTime" [(ngModel)]="dateTime" />
+</div>
+<div>
+  <label for="amount">Amount</label>
+  <input type="number" name="" id="amount" [(ngModel)]="amount" />
+</div>
+<div>
+  <label for="price">Price</label>
+  <input type="text" name="price" id="price" [(ngModel)]="price" />
+</div>
+<div>
+  <label for="status">Status</label>
+  <input type="text" name="status" id="status" [(ngModel)]="status" />
+</div>
+
 <button type="submit" (click)="addItem()">Add</button>
 <button type="submit" (click)="editItem()">Edit</button>
 <!-- </form> -->

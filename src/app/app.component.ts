@@ -4,6 +4,9 @@ import { HeadingComponent } from './components/heading/heading.component';
 import { ChartComponent } from './components/chart/chart.component';
 import { CardComponent } from './components/card/card.component';
 import { TableComponent } from './components/table/table.component';
+import { MatTableComponent } from './components/mat-table/mat-table.component';
+import { BnhCommonPaginatorComponent } from './components/bnh-common-paginator/bnh-common-paginator.component';
+import { PaginatorComponent } from './components/paginator/paginator.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -18,6 +21,9 @@ import { CommonModule } from '@angular/common';
     CardComponent,
     TableComponent,
     CommonModule,
+    MatTableComponent,
+    PaginatorComponent,
+    BnhCommonPaginatorComponent
   ],
 })
 export class AppComponent {
@@ -109,6 +115,15 @@ export class AppComponent {
     },
   ];
 
+  // test() {
+  //   let greeting = "Hello";
+  //   console.log(greeting);
+  // }
+
+  test() {
+    console.log('test');
+  }
+
   handelUpdateItem(e: any) {
     console.log('x', e);
   }
@@ -118,4 +133,5 @@ export class AppComponent {
     const removeIndex = this.dataTable.findIndex((item: any) => item == e);
     this.dataTable.splice(removeIndex, 1);
   }
+
 }
