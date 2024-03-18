@@ -6,6 +6,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { MatPaginatorIntlCro } from './customer';
 
 export interface PeriodicElement {
   name: string;
@@ -44,6 +46,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     MatPaginatorModule,
     MatSortModule,
   ],
+  providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorIntlCro}]
 })
 export class TableV2Component implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;

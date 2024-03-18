@@ -6,21 +6,24 @@ import { CardComponent } from './components/card/card.component';
 import { CommonModule } from '@angular/common';
 import { TableComponent } from './components/table/table.component';
 import { TableV2Component } from './components/table-v2/table-v2.component';
+import { FormComponent } from './components/form/form.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  imports: [
-    RouterOutlet,
-    HeadingComponent,
-    ChartComponent,
-    CardComponent,
-    TableComponent,
-    TableV2Component,
-    CommonModule,
-  ],
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    imports: [
+        RouterOutlet,
+        HeadingComponent,
+        ChartComponent,
+        CardComponent,
+        TableComponent,
+        TableV2Component,
+        FormComponent,
+        CommonModule,
+
+    ]
 })
 export class AppComponent {
   title = 'dashboard-admin';

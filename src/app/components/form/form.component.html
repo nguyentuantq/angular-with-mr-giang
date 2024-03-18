@@ -1,0 +1,105 @@
+<div class="container p-5">
+  <h3>Personal Information</h3>
+  <div class="row">
+    <div class="col-6">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <label for="first-name" class="form-label">First Name: </label>
+        <input
+          id="first-name"
+          class="form-control"
+          type="text"
+          formControlName="firstName"
+        />
+
+        <div
+          *ngIf="
+            profileForm['controls']['firstName'].dirty &&
+            profileForm['controls']['firstName'].errors
+          "
+        >
+          <small
+            *ngIf="profileForm['controls']['firstName'].errors['required']"
+          >
+            <label for="" class="text-danger"
+              >Trường này không được để trống</label
+            >
+          </small>
+        </div>
+
+        <label for="last-name" class="form-label">Last Name: </label>
+        <input
+          id="last-name"
+          class="form-control"
+          type="text"
+          formControlName="lastName"
+        />
+
+        <div
+          *ngIf="
+            profileForm['controls']['lastName'].dirty &&
+            profileForm['controls']['lastName'].errors
+          "
+        >
+          <small *ngIf="profileForm['controls']['lastName'].errors['required']">
+            <label for="" class="text-danger"
+              >Trường này không được để trống</label
+            >
+          </small>
+        </div>
+
+        <div formGroupName="address">
+          <h2>Address</h2>
+
+          <label for="street" class="form-label">Street: </label>
+          <input
+            id="street"
+            class="form-control"
+            type="text"
+            formControlName="street"
+          />
+          <label for="city" class="form-label">City: </label>
+          <input
+            id="city"
+            class="form-control"
+            type="text"
+            formControlName="city"
+          />
+
+          <label for="state" class="form-label">State: </label>
+          <input
+            id="state"
+            class="form-control"
+            type="text"
+            formControlName="state"
+          />
+
+          <label for="zip" class="form-label">Zip Code: </label>
+          <input
+            id="zip"
+            class="form-control"
+            type="text"
+            formControlName="zip"
+          />
+        </div>
+
+        <p>Complete the form to enable button.</p>
+        <button
+          type="submit"
+          class="btn btn-secondary"
+          [disabled]="!profileForm.valid"
+        >
+          Submit
+        </button>
+        <p>{{ profileForm.status }}</p>
+      </form>
+    </div>
+    <div class="col-6">
+      <p>{{ this.profileForm.value.firstName }}</p>
+      <p>{{ this.profileForm.value.lastName }}</p>
+      <p>{{ this.profileForm.value.address?.street }}</p>
+      <p>{{ this.profileForm.value.address?.city }}</p>
+      <p>{{ this.profileForm.value.address?.state }}</p>
+      <p>{{ this.profileForm.value.address?.zip }}</p>
+    </div>
+  </div>
+</div>
